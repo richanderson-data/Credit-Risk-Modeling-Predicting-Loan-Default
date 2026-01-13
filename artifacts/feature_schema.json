@@ -1,0 +1,11 @@
+{
+  "required_features": [
+    "orig_interest_rate",
+    "orig_upb",
+    "orig_loan_term",
+    "property_type",
+    "loan_purpose",
+    "property_state",
+    "loan_type"
+  ]
+}

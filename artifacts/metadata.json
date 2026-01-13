@@ -1,0 +1,17 @@
+{
+  "trained_at": "2026-01-13T04:00:35.750057Z",
+  "data_path": "/Users/richardanderson/Desktop/Credit-Risk-Default Model/data/processed/model_data_2016Q1.parquet",
+  "n_rows": 338473,
+  "default_rate": 0.007826325881237203,
+  "model": {
+    "type": "LogisticRegression",
+    "class_weight": "balanced",
+    "solver": "lbfgs",
+    "max_iter": 5000
+  },
+  "metrics": {
+    "roc_auc": 0.818744495051002,
+    "pr_auc": 0.053584510621372594
+  },
+  "notes": "Baseline PD model. Thresholding is policy-dependent. For production use: probability calibration, loss-based threshold selection, and model governance checks (fairness, drift, monitoring)."
+}

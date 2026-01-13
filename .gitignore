@@ -1,0 +1,19 @@
+# Python
+__pycache__/
+*.pyc
+
+# Virtual environments
+.venv/
+
+# OS junk
+.DS_Store
+
+# Raw / large data (do not commit)
+2016Q*.csv
+2016Q*.zip
+
+# Optional: ignore all big CSVs by default
+# (If you later want a small demo CSV, explicitly un-ignore it)
+# *.csv
+# !data/sample_app_input.csv
+
