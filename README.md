@@ -1,3 +1,7 @@
+# Credit Risk Default Prediction System
+
+This repository contains an end-to-end machine learning system for predicting mortgage loan default using Fannie Mae data. It includes training pipelines, model artifacts, and a Streamlit-based scoring app.
+
 # Credit Risk Modeling – Predicting Loan Default
 
 End-to-end credit risk modeling project using Fannie Mae mortgage data.  
