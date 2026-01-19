@@ -118,7 +118,7 @@ def main():
     metadata_path = artifact_dir / "metadata.json"
     metadata = {
         "trained_at": datetime.utcnow().isoformat() + "Z",
-        "data_path": str(data_path),
+        "data_path": str(data_path.relative_to(Path(__file__).resolve().parents[1])),
         "n_rows": int(len(df)),
         "default_rate": float(y.mean()),
         "model": {

@@ -1,6 +1,6 @@
 {
-  "trained_at": "2026-01-13T04:00:35.750057Z",
-  "data_path": "/Users/richardanderson/Desktop/Credit-Risk-Default Model/data/processed/model_data_2016Q1.parquet",
+  "trained_at": "2026-01-19T21:27:27.467201Z",
+  "data_path": "data/processed/model_data_2016Q1.parquet",
   "n_rows": 338473,
   "default_rate": 0.007826325881237203,
   "model": {
