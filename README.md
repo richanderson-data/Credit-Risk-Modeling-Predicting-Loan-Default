@@ -2,7 +2,19 @@
 
 This repository contains an end-to-end machine learning system for predicting mortgage loan default using Fannie Mae data. It includes training pipelines, model artifacts, and a Streamlit-based scoring app.
 
-# Credit Risk Modeling – Predicting Loan Default
+## At-a-Glance (Results)
+- **Task:** Predict 24-month mortgage default probability (origination-time features only; no leakage)
+- **Model:** Logistic Regression (class-weighted baseline)
+- **Data:** Fannie Mae Single-Family Loan Performance (processed features; raw excluded)
+- **Scale:** **338,473** loans • default rate **0.78%**
+- **Performance (holdout):** ROC-AUC **0.819** • PR-AUC **0.0536**
+- **Artifacts:** `artifacts/model.joblib`, `artifacts/feature_schema.json`, `artifacts/metadata.json`
+- **Demo:** Streamlit scoring app (`app/app.py`) — upload CSV, get PD + flag + risk bucket
+
+**Repro proof:** Metrics and training metadata are persisted in `artifacts/metadata.json` after running `python3 -m src.train`.
+
+
+## Overview
 
 End-to-end credit risk modeling project using Fannie Mae mortgage data.  
 This repository demonstrates a full pipeline from data preparation and model training
@@ -81,18 +93,18 @@ project is on **end-to-end system design and reproducibility**, not model comple
 
 ## Training
 
-From the project root:
-
+### Train and generate artifacts
 ```bash
+python3 -m venv .venv
 source .venv/bin/activate
 pip install -r requirements.txt
 python3 -m src.train
 ```
-
-This will:
-- Load processed feature data
-- Train the model
-- Persist artifacts to the `artifacts/` directory
+### Validate artifacts + metrics
+```bash
+ls -lah artifacts
+python3 -c "import json; print(json.dumps(json.load(open('artifacts/metadata.json')), indent=2))"
+```
 
 ---
 
@@ -152,6 +164,8 @@ Scored results can be downloaded as a CSV.
 - Threshold selection is policy-dependent and intentionally separated from training.
 - The baseline model is intentionally simple; the emphasis of this project is on
   end-to-end system design and reproducibility rather than model complexity.
+- Because default is rare (~0.78%), PR-AUC is emphasized alongside ROC-AUC to reflect real screening performance under class imbalance.
+
 
 ---
 
